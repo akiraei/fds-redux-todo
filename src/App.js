@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
-import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList';
+import {Provider} from 'react-redux'
+import {store} from './store'
+
+import TodoFormContainer from './containers/TodoFormContainer';
+import TodoListContainer from './containers/TodoListContainer';
 
 class App extends Component {
   render() {
     return (
+      <Provider store={store}>
+
       <div>
-        <TodoForm />
-        <TodoList />
+        <TodoFormContainer />
+        <TodoListContainer />
       </div>
-    );
+      </Provider>
+    )
   }
 }
 
